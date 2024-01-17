@@ -1,7 +1,7 @@
 # LLIST
 MOSlet for printing to a thermal printer from mos/basic.
 
-Put the bin file in your MOS folder.
+Put the latest bin file in your MOS folder. Rename it to LLIST.bin
 
 Works fine from MOS.
 Type: LLIST filename.txt (also works with .bas files)
