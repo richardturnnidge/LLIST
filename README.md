@@ -16,4 +16,4 @@ Type: *LLIST filename.txt (also works with .bas files)
 
 Not working correctly under BBCBasic 16bit
 
-NOTE. Only two baud rates, 9600 or 19200 (param option)
+NOTE. Only two baud rates currently work, 9600 or 19200 (param option)
