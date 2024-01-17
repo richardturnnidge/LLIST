@@ -1,5 +1,6 @@
 # LLIST
 MOSlet for printing to a thermal printer from mos/basic.
+Currently set to 9600 baud rate as default.
 
 Put the latest bin file in your MOS folder. Rename it to LLIST.bin
 
