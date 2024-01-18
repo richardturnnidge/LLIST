@@ -28,7 +28,6 @@ argv_ptrs_max:      EQU 16          ; Maximum number of arguments allowed in arg
 ;   INITIAL SETUP CODE HERE
 ;
 ; ---------------------------------------------
-;    include "debug_routines.asm"
 
 start:                      ; Start code here
     push af                 ; Push all registers to the stack
@@ -89,11 +88,6 @@ start:                      ; Start code here
     ld (UART1_Struct), hl   ; set baud HL
 
 
-
-
-
-
-
 stdBaud:
     ld hl, s_CRLF
     call PRSTR   
@@ -118,6 +112,7 @@ now_exit:
 
 string2int:
 
+; takes pointer to a string of ascii representing an integer and converts to 3 byte integer
 ; hl = result
 ; de = pointer to ASCII number
 
@@ -142,7 +137,6 @@ T1:
 T2:
   ret 
 
-
 ; ---------------------------------------------
 
 printError:
@@ -151,6 +145,7 @@ printError:
 
     jp now_exit
 
+; ---------------------------------------------
 
 PRINT_LOOP:
     call openUART1
@@ -161,25 +156,24 @@ PRINT_LOOP:
     call closeUART1
     ret
 
+; ---------------------------------------------
+
 LPRINT:
-    LD  A,(HL)
-    OR  A
+    LD A,(HL)
+    OR A
     RET Z
     ld c, a 
-    MOSCALL $18                     ; put C char to serial
+    MOSCALL $18                     ; send C char to serial
     INC HL
     ld a, 00000010b
     call multiPurposeDelay
-    JR  LPRINT
+    JR LPRINT
 
     ret
 
-
 ; ---------------------------------------------
 
-; Print a zero-terminated string
-
-PRSTR:      
+PRSTR:                              ; Print a zero-terminated string
     LD A,(HL)
     OR A
     RET Z
@@ -240,7 +234,7 @@ _parse_params_1:
 ; Returns:
 ; - HL: Address of next none-space character
 ;    F: Z if at end of string, otherwise NZ if there are more tokens to be parsed
-;
+
 _skip_spaces:       
         LD  A, (HL)                 ; Get the character from the parameter string   
             CP  ' '                 ; Exit if not space
@@ -278,6 +272,8 @@ CLS:
     ld a, 12
     rst.lil $10                     ; CLS
     ret
+
+; ---------------------------------------------
 
 printMSG:
     ld hl, msg
@@ -351,7 +347,8 @@ waitLoop:
 
 oldTimeStamp:   .db 00h
 
-    ; ---------------------------------------------
+; ---------------------------------------------
+
 msg:                .db "Printing file: ",0
 msg2:               .db "Done.\r\n",0
 errMSG:             .db "Sorry, could not open that file.\r\n",0
@@ -360,5 +357,5 @@ s_ARGV:             .DB  " - argv: ", 0
 s_CRLF:             .DB  "\n\r", 0
 argv_ptrs:          .ds    48, 255        ; max 16 x 3 bytes each
 numParams:          .db 0
-fileStoreHere:      .ds 1024,0          ; only storing 1k for sure, rest will go into RAm beyond the app
+fileStoreHere:      .ds 1024,0          ; only storing 1k for sure, rest will go into RAM beyond the app
 
