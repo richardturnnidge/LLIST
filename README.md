@@ -17,3 +17,4 @@ Type: <B>*LLIST filename.bas</B> or: <B>*LLIST filename.txt  19200</B>
 
 NOTE. Any standard baud rate can be used as a second parameter, 9600, 19200, 57600, etc. There is no error checking here, so only enter a proper number...
 
+<img src="printer.jpg" alt="printer picture">
