@@ -3,11 +3,11 @@ MOSlet for printing to a thermal printer from mos/basic.
 Currently set to 9600 baud rate as default.
 Include a second parameter for a different baud rate.
 
-Put the latest bin file in your MOS folder. Rename it to <B>LLIST.bin</B>
+Put the latest bin file in your MOS folder which should be at the top level of your SC card. Rename it to <B>LLIST.bin</B>
 
-Works from MOS, or any program that allows entry of MOS commands (eg. bbcbasic).
+Works from MOS, or any program that allows entry of MOS commands (eg. BBCBasic).
 
-Type: <B>LLIST filename.txt</B> (also works with .bas files)
+Type: <B>LLIST filename.txt</B> (also works with .bas file, or any text file)
 
 Type: <B>LLIST filename.txt  19200</B> (to change baud rate)
 
