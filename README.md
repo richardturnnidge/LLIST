@@ -13,7 +13,7 @@ Type: <B>LLIST filename.txt  19200</B>
 
 Within BBC Basic (works with 24bit ADL as well as 16 bit version):
 
-Type: <B>*LLIST filename.bas</B> or: Type: <B>*LLIST filename.txt  19200</B> 
+Type: <B>*LLIST filename.bas</B> or: <B>*LLIST filename.txt  19200</B> 
 
 NOTE. Any standard baud rate can be used as a second parameter, 9600, 19200, 57600, etc. There is no error checking here, so only enter a proper number...
 
