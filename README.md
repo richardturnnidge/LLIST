@@ -11,7 +11,7 @@ It is currently set to 9600 baud rate as default. Include a second parameter for
 
 Type: <B>LLIST filename.txt  19200</B> 
 
-Within BBC Basic (works with 24bit ADL as well as 16 bit version):
+Within BBC Basic (works with 24bit ADL as well as 16 bit version), use the '*' prefix to send the MOS command:
 
 Type: <B>*LLIST filename.bas</B> or: <B>*LLIST filename.txt  19200</B> 
 
