@@ -7,7 +7,7 @@ Put the latest bin file in your MOS folder. Rename it to LLIST.bin
 
 Works from MOS, or any program that allows entry of MOS commands (eg. bbcbasic).
 
-Type: LLIST filename.txt (also works with .bas files)
+Type: <B>LLIST filename.txt</B> (also works with .bas files)
 
 Type: LLIST filename.txt  19200 (to change baud rate)
 
