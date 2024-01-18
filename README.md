@@ -9,7 +9,7 @@ From the MOS command line, type: <B>LLIST filename.txt</B> (also works with .bas
 
 It is currently set to 9600 baud rate as default. Include a second parameter for a different baud rate:
 
-Type: <B">LLIST filename.txt  19200</B> 
+Type: <B>LLIST filename.txt  19200</B> 
 
 Within BBC Basic (works with 24bit ADL as well as 16 bit version), use the '*' prefix to send the MOS command:
 
